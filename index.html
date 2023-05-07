@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Creski</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="logo">
+      Creski
+    </div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a href="#home" id="hom" class="navpane-retract">Home 🏘️</a></li>
+      <li><a href="#anime" id="an" class="navpane-retract">Anime 👕</a></li>
+      <li><a href="#men" id="me" class="navpane-retract">Men ♂️</a></li>
+      <li><a href="#women" id="wo" class="navpane-retract">Women ♀️</a></li>
+      <li><a href="#hoodies" id="ho" class="navpane-retract">Hoodies 👻</a></li>
+    </ul>
+  </nav>
+  <section id="home" class="content">
+    <h1>
+      Welcome to the creski store<br>
+    </h1>
+  </section>
+  <hr>
+  <section id="anime" class="content">
+    <h1>Anime coming soon ;)</h1>
+  </section>
+
+  <section id="men" class="content">
+    
+      <video autoplay muted loop id="myVideo">
+        <source src="creski.mp4" type="video/mp4">
+      </video>
+    <div>
+      <h1>New drop on men's wear</h1><br><br>
+      <a class="button">Explore now</a>
+    </div>
+  </section>
+  <section id="women" class="content">
+    <h1>Women ♀️</h1>
+  </section>
+  <section id="hoodies" class="content">
+    <h1>Hoodies 👻</h1>
+  </section>
+
+
+
+  <script>
+    // sticky navbar
+    window.onscroll = function () {myFunction()};
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+
+    const boxes = document.querySelectorAll('.navpane-retract');
+
+    boxes.forEach(box => {
+      box.addEventListener('click', function handleClick(event) {
+        document.getElementById("click").checked = false;
+      });
+    });
+
+
+  </script>
+
+
+
+</body>
+
+</html>
